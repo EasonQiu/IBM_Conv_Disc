@@ -1,9 +1,20 @@
 applications:
 - path: .
-  memory: 512M
+  memory: 256M
   instances: 1
   domain: mybluemix.net
-  name: <enter_name_here>
-  host: <enter_same as above_name_here>
+  name: rpiproject1
+  host: rpiproject1
   disk_quota: 1024M
-  command: npm start
+  services:
+  - availability-monitoring-auto
+  - Discovery-mydiscovery
+  - Conversation-myconversation
+  - rpiproject1-cloudantNoSQLDB
+  env:
+    worksapce_id: dbfe8471-d25b-4aab-89d1-f700fe64edd7
+    collection_id: b2ccaff5-3301-42bd-871f-2209022fb429
+    environment_id: 1f7306af-7f11-4b82-8e65-28f30bd951a7
+    intent_confidence: '0.75'
+    conversation_version: '2017-04-21'
+    discovery_version: '2017-04-27'
